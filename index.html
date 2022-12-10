@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit the Grand Canyon</title>
+    <link rel="icon" type="image/x-icon" href="azflag.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300&family=Harmattan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- All jQuery Script and styles -->
+    <script>
+        $( function() {
+          $( "#accordion" ).accordion();
+        } );
+    </script>
+    <script>
+        $( function() {
+          $( "#datepicker" ).datepicker();
+        } );
+    </script>
+    <script>
+        $( function() {
+          var availableTags = [
+          "Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Minor Outlying Islands", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "U.S. Virgin Islands", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+          ];
+          $( "#tags" ).autocomplete({
+            source: availableTags
+          });
+        } );
+    </script>
+    <style>
+        .ui-autocomplete {
+            max-height: 100px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        * html .ui-autocomplete {
+        height: 100px;
+        }
+    </style>
+    <script>
+        $( function() {
+          $( document ).tooltip();
+        } );
+    </script>
+    <style>
+        label {
+          display: inline-block;
+          width: 5em;
+        }
+    </style>
+    <style>
+        #custom-handle {
+          width:50px;
+          height: 1.6em;
+          top: 50%;
+          margin-top: -.8em;
+          text-align: center;
+          line-height: 1.6em;
+        }
+    </style>
+    <script>
+        $( function() {
+          var handle = $( "#custom-handle" );
+          $( "#slider" ).slider({
+            create: function() {
+              handle.text( $( this ).slider( "value" ) );
+            },
+            slide: function( event, ui ) {
+              handle.text( ui.value );
+            }
+          });
+        } );
+    </script>
+    <script>
+        $( function() {
+            $( "#accordion" ).accordion({
+            collapsible: true, active:false
+            });
+        } );
+    </script>
+    <script>
+        $( function() {
+          $( "#accordion" ).accordion({
+            heightStyle: "content"
+          });
+        } );
+    </script>
+    <style>
+        .toggler { width: 500px; height: 200px; position: relative; }
+        #button { padding: .5em 1em; text-decoration: none; }
+        #effect { width: 240px; height: 170px; padding: 0.4em; position: relative; }
+        #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+        .ui-effects-transfer { border: 2px dotted gray; }
+    </style>
+    <script>
+        $( function() {
+          // run the currently selected effect
+          function runEffect() {
+            // get effect type from
+            var selectedEffect = $( "#effectTypes" ).val();
+       
+            // Most effect types need no options passed by default
+            var options = {};
+            // some effects have required parameters
+            if ( selectedEffect === "scale" ) {
+              options = { percent: 50 };
+            } else if ( selectedEffect === "transfer" ) {
+              options = { to: "#button", className: "ui-effects-transfer" };
+            } else if ( selectedEffect === "size" ) {
+              options = { to: { width: 200, height: 60 } };
+            }
+       
+            // Run the effect
+            $( "#effect" ).effect( selectedEffect, options, 500, callback );
+          };
+       
+          // Callback function to bring a hidden box back
+          function callback() {
+            setTimeout(function() {
+              $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
+            }, 1000 );
+          };
+       
+          // Set effect from select menu value
+          $( "#button" ).on( "click", function() {
+            runEffect();
+            return false;
+          });
+        } );
+    </script>
+    <!-- End of all jQuery script and styles -->
+    <style>
+/* Everything + Header and Nav */
+        html {
+            scroll-behavior: smooth;
+        }
+        #scroll{
+            text-decoration: none;
+            background-color: white;
+            color: black;
+        } 
+        *{
+            margin:0px;
+            padding:0px;
+            font-family: 'Alexandria', sans-serif;
+            font-family: 'Harmattan', sans-serif;
+        }
+        header{
+            text-align: center;
+            background-image: linear-gradient(to right, rgb(255, 153, 0), rgb(165, 71, 42));
+        }
+        nav{
+            background-color: rgb(81, 81, 81);
+            display:flex;
+            justify-content: space-around;
+            height:50px;
+        }
+        #Navitem{
+            border-radius:25px;
+            background-color: white;
+            height:30px;
+            width:100px;
+        }
+        #Navitem:hover{
+            background-color: grey;
+        }
+/* Body */
+        /* Section 1 */
+        .section1{
+            position: relative;
+            text-align: center;
+            background-color: bisque;
+            font-size:20px;
+        }
+        #GC{
+            width:100%;
+            height:700px;
+        }
+        #mainText{ 
+            border-radius: 25px;
+            font-size:30px;
+            background-color: rgba(177, 79, 243, 0.43);
+            width:60vw;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .section2{
+            position: relative;
+            text-align: center;
+            background-color: bisque;
+            font-size:20px;
+            height:90vh;
+        }
+        #effect{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap:wrap;
+            text-align: center;
+            margin:auto;
+            width:80vw;
+            height:40vh;
+        }
+        #photogal{
+            width:200px;
+            height:200px;
+        }
+        #map{
+            display: flex;
+            justify-content:center;
+        }
+        /* Accordian */
+        #acrImg{
+            width:200px;
+            height:200px;
+            background-color: beige;
+            margin:auto;
+            text-align: center;
+        }
+        #accordianSection{
+            padding:15px;
+            font-size:20px;
+            display:flex;
+            justify-content: space-evenly;
+        }
+        #reviews{
+            width:200px; 
+            height:200px; 
+            border: solid 5px;
+            transition: 1s;
+        }
+        #reviews:hover{
+            transform: scale(1.2);
+        }
+/* Footer */
+        footer{
+            border: solid 5px black;
+            background-color: rgb(81, 81, 81);
+            margin:auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="height:70px; font-size:45px;">The Grand Canyon</h1>
+        <nav>
+            <a id="Navitem" href="#info" style="border:2px solid black;">Info</a>
+            <button id="Navitem"><a href="https://amekhail733.github.io/All-Project-Website/"><p style="font-size:large;">Home</p></a></button>
+            <a id="Navitem" href="#form" style="border:2px solid black;">Intrest Form</a>
+        </nav>
+    </header>
+    <!-- section 1 -->
+    <div class="section1">
+        <div id="mainImg">
+            <img src="GC.jpg" alt="grandcanyon" id="GC">
+        </div>
+        <div id="mainText">
+            <h1>The Grand Canyon</h1>
+            <p>Are you ready to expand your limits?<br>
+            Visit the Grand Canyon Today!</p>
+            <a id="scroll" href="#down">Get Started</a><br>
+        </div>
+    </div>
+    <div id="down"></div>
+        <!-- accordion -->
+        <div id="accordion" style="border: solid 5px black;">
+            <!-- What is the grand canyon -->
+            <h3 style="font-size:20px;">What is the Grand Canyon?</h3>
+            <div id="accordianSection">
+              <p style="font-size:20px;">
+                The Grand Canyon in Arizona is a natural formation distinguished by layered bands of red rock, revealing millions of years of geological history in cross-section. Vast in scale, the canyon averages 10 miles across and a mile deep along its 277-mile length. Much of the area is a national park, with Colorado River white-water rapids and sweeping vistas.<br><br>
+                The Grand Canyon is located in the Northwest region of Arizona. The Canyon sits close to the borders of Utah and Nevada. If you a resident in Arizona and live south of the Canyon, the best way to get there is to head up North through Flagstaff.
+              </p>
+              <img src="grandcanyon.jpg" alt="grandcanyon" id="acrImg">
+            </div>
+            
+            <!-- Information about its open times -->
+            <h3 style="font-size:20px;">Grand Canyon Opening times</h3>
+            <div id="accordianSection">
+                <p style="font-size:20px;">The South Rim is open 24 hours a day, 365 days of the year including holidays. The entrance station is open 24 hours but the Park's Visitor Center and other facilities are open 7 a.m. to 6 p.m. during the peak months of May-September and off-peak of October-April from 8 a.m. to 5 p.m.</p>
+                <img src="grandcanyon2.jpg" alt="grandcanyon" id="acrImg">
+            </div>
+            
+            <!-- Reviews -->
+            <h3 style="font-size:20px;">Reviews</h3>
+            <div id="effect" class="ui-widget-content ui-corner-all" style="flex-wrap:wrap;">
+                <img src="review1.jpg" id="reviews">
+                <img src="review2.jpg" id="reviews">
+                <img src="review3.jpg" id="reviews">
+                <img src="review4.jpg" id="reviews">
+                <div>
+                    <select name="effects" id="effectTypes">
+                        <option value="blind">Blind</option>
+                        <option value="bounce">Bounce</option>
+                        <option value="clip">Clip</option>
+                        <option value="drop">Drop</option>
+                        <option value="explode">Explode</option>
+                        <option value="fade">Fade</option>
+                        <option value="fold">Fold</option>
+                        <option value="highlight">Highlight</option>
+                        <option value="puff">Puff</option>
+                        <option value="pulsate">Pulsate</option>
+                        <option value="scale">Scale</option>
+                        <option value="shake">Shake</option>
+                        <option value="size">Size</option>
+                        <option value="slide">Slide</option>
+                        <option value="transfer">Transfer</option>
+                    </select>
+                    <button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+                </div>
+            </div>
+        </div>
+    <!-- section 2 -->
+    <div class="section2">
+        <h1  id="info">History of The Grand Canyon</h1>
+        <div>
+            <p>The Grand Canyon, predicted by scientests, was fromed about 5-6 million years ago. It was fromed by the Colorado River cutting a channel the layers of rock. The first Europeans to see Grand Canyon were soldiers led by García López de Cárdenas. In 1540, Francisco Vázquez de Coronado and his Spanish army traveled northward from Mexico City in search of the Seven Cities of Cíbola. After traveling for six months, Coronado's army arrived at the Hopi Mesas, east of Grand Canyon. The Canyon became an offical National Park on February 26th, 1919. </p><br>
+        </div>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1650820.3245276883!2d-113.96430698167072!3d36.08718745286893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x873312ae759b4d15%3A0x1f38a9bec9912029!2sGrand%20Canyon%20National%20Park!5e0!3m2!1sen!2sus!4v1670629622595!5m2!1sen!2sus" width="200" height="200" style="border:5px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p style="font-size:15px; width:400px; height:200px; border: solid 5px black; background-color: lavender;">Here is the Grand Canyon located on the map. It is located in the North-west corner of Arizona. The Canyon sits near the borders of Utah and Nevada. The Canyon is closer to Las Vegas, Nevada than Phoneix, Arizona.</p>
+        </div>
+    </div>
+
+<!-- A simple Intrest form -->
+    <div style="text-align:center; background-image: linear-gradient(to right, rgb(255, 153, 0), rgb(165, 71, 42)); border: solid 2.5px black; height:90vh; font-size:20px;" id="form">
+        <p>Are you intrested in visiting the Grand Canyon? Then please fill out this quick and simple intrest form!</p>
+            <form action="submit.html" target="_blank">
+                First Name:<br>
+                <div href="#" title="Remember! All your information is stored in confidence, and will never be shared with anyone else."><input type="text" placeholder="first name" required></div>
+                Last Name:<br>
+                <input type="text" placeholder="last name" required><br>
+                Email:<br>
+                <input type="email" placeholder="email@provider.com" required><br>
+                Intrested in reciving email updates?<br>
+                <input type="radio" name="recive" value="yes">Yes
+                <input type="radio" name="recive" value="no">No<br>
+                Phone Number (Optional)<br>
+                <input type="text" placeholder="000-000-0000"><br>
+                <label for="tags">Your State: </label><br>
+                <input id="tags" placeholder="state"><br>
+                What Date would you most likely be intrested in visiting?<br> 
+                <p style="font-size:smaller">(If not sure the exact day, pick the sunday of the potential week):</p>
+                <input type="text" id="datepicker" required><br>
+                <p>
+                    On a scale of 0-100, how intrested would you be in visiting? 
+                    <div id="slider" style="width:200px; text-align: center; margin:auto;">
+                        <div id="custom-handle" class="ui-slider-handle"></div>
+                      </div>
+                </p>
+                <input type="submit" value="submit">
+            </form>
+    </div>
+<!-- Footer -->
+    <footer>
+        &copy;AMekhail733 2022<br>
+        West-MEC: Central Campus, Glendale, AZ<br>
+        amekha733@west-mec.org | 123-456-7890<br>
+        All rights reserved
+    </footer>
+<!-- Allow people to put down an intrest form in showing up -->
+</body>
+</html>
